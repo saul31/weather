@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="well">
+    <h2>Enter a zipcode:</h2>
+    <input class="form-control" placeholder="Zipcode" type="number" id="addLocation" [(ngModel)]="zipCode">
+    <br>
+    <button class="btn btn-primary" id="addLocationBtn" (click)="search()">
+      Add location
+    </button>
+  </div>
+  <div class="well flex" *ngIf="showAlert">
+    <h3>No information was found with that zipcode</h3>
+  </div>
+  <div *ngFor="let current of weathers; let i = index">
+    <app-current-weather (weatherDelete)="deleteWeather($event)" [current]="current" [index]="i"></app-current-weather>
+  </div>
+</div>
+<hr>
