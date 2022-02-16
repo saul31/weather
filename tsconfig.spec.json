@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "module": "commonjs",
+    "types": [
+      "jest",
+      "node"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true, // make sure this is on
+    "allowJs": true,
+    "sourceMap": false
+  }
+}

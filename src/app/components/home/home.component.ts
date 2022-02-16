@@ -20,6 +20,7 @@ export class HomeComponent {
    * Indicates if the alert is displayed
    */
   showAlert = false;
+
   constructor(
     private weatherService: WeatherService
   ) {
@@ -33,7 +34,7 @@ export class HomeComponent {
    * @param index position of the list
    */
   deleteWeather(index: number): void {
-    this.weathers.splice(index, this.weathers.length);
+    this.weathers.splice(index, this.weathers.length === 1 ? 2 : this.weathers.length - 1);
     localStorage.setItem('items', JSON.stringify(this.weathers));
   }
 

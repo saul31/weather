@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 import { CurrentWeather } from '../models/weather.model';
-import { environment } from './../environments/environment.prod';
+import { Forecast } from './../models/weather.model';
 
 @Injectable({
   providedIn: 'root'
@@ -40,9 +41,9 @@ export class WeatherService {
    * @param zipCode of place for search
    * @returns 
    */
-  getWeather(zipCode: number): Observable<any> {
-    const url = `${this.api}forecast?zip=${zipCode}&appid=${this.key}`
-    return this.http.get<any>(url);
+  getWeather(zipCode: number): Observable<Forecast> {
+    const url = `${this.api}forecast/daily?zip=${zipCode}&appid=${this.key}&cnt=5`
+    return this.http.get<Forecast>(url);
   }
 
   /**

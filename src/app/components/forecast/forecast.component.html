@@ -6,10 +6,10 @@
     </div>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let day of forecast.list">
-        {{ day.dt_txt | date:'fullDate' }}
+        {{ day.dt * 1000 | date:'fullDate' }}
         {{ day.weather[0].description }}
-        - Min: {{ day.main.temp_min }}
-        - Max: {{ day.main.temp_max }}
+        - Min: {{ day.temp.min }}
+        - Max: {{ day.temp.max }}
 
         <img class="icon" [src]="getIcon(day.weather[0].main)">
       </li>

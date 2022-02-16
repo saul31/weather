@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CurrentWeather } from './../../models/weather.model';
 import { WeatherService } from './../../services/weather.service';
 
@@ -7,7 +7,7 @@ import { WeatherService } from './../../services/weather.service';
   templateUrl: './current-weather.component.html',
   styleUrls: ['./current-weather.component.css']
 })
-export class CurrentWeatherComponent implements OnInit {
+export class CurrentWeatherComponent {
   /**
    * Weather information
    */
@@ -26,9 +26,6 @@ export class CurrentWeatherComponent implements OnInit {
     private weatherService: WeatherService
   ) {
     this.weatherDelete = new EventEmitter();
-  }
-
-  ngOnInit(): void {
   }
 
 

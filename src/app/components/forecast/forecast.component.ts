@@ -14,6 +14,7 @@ export class ForecastComponent implements OnInit {
    */
   forecast: Forecast;
 
+
   constructor(
     private route: ActivatedRoute,
     private weatherService: WeatherService
@@ -21,6 +22,9 @@ export class ForecastComponent implements OnInit {
 
   ngOnInit(): void {
     this.forecast = this.route.snapshot.data.response;
+    // for (var i = 0; i < this.forecast.list.length; i += 8) {
+    //   this.daily.push(this.forecast.list[i]);
+    // }
   }
 
   /**

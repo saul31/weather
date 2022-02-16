@@ -1,3 +1,4 @@
+
 export interface CurrentWeather {
   coord: Coord;
   weather: Weather[];
@@ -63,11 +64,11 @@ export interface Temp {
 }
 
 export interface Forecast {
+  city: City;
   cod: string;
   message: number;
   cnt: number;
   list: List[];
-  city: City;
 }
 
 export interface City {
@@ -77,58 +78,41 @@ export interface City {
   country: string;
   population: number;
   timezone: number;
-  sunrise: number;
-  sunset: number;
 }
 
 export interface Coord {
-  lat: number;
   lon: number;
+  lat: number;
 }
 
 export interface List {
   dt: number;
-  main: MainClass;
-  weather: Weather[];
-  clouds: Clouds;
-  wind: Wind;
-  visibility: number;
-  pop: number;
-  sys: Sys;
-  dt_txt: string;
-}
-
-export interface Clouds {
-  all: number;
-}
-
-export interface MainClass {
-  temp: number;
-  feels_like: number;
-  temp_min: number;
-  temp_max: number;
+  sunrise: number;
+  sunset: number;
+  temp: Temp;
+  feels_like: FeelsLike;
   pressure: number;
-  sea_level: number;
-  grnd_level: number;
   humidity: number;
-  temp_kf: number;
+  weather: Weather[];
+  speed: number;
+  deg: number;
+  gust: number;
+  clouds: number;
+  pop: number;
 }
 
-export interface Sys {
-  pod: Pod;
+export interface FeelsLike {
+  day: number;
+  night: number;
+  eve: number;
+  morn: number;
 }
 
-export enum Pod {
-  D = "d",
-  N = "n",
+export interface Temp {
+  day: number;
+  min: number;
+  max: number;
+  night: number;
+  eve: number;
+  morn: number;
 }
-
-export interface Weather {
-  id: number;
-  main: string;
-  description: string;
-  icon: string;
-}
-
-
-
